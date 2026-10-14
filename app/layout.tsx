@@ -33,6 +33,9 @@ export const metadata: Metadata = {
     siteName: `${doctor.name} Portfolio`,
     images: [{ url: '/photo.jpg', width: 800, height: 800, alt: doctor.nameEn }],
   },
+  verification: {
+    google: 'iEslvdNfBIAdw5Zak918wEZSl5jwj83saDcW8Ce1YyM',
+  },
   twitter: {
     card: 'summary_large_image',
     title: `${doctor.name} (${doctor.nameEn}) — অর্থোপেডিক সার্জন`,
