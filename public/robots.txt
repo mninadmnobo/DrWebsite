@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://drkhandakarhafijurrahman.com/sitemap.xml
+Sitemap: https://drkhandakarhafijurrahman.vercel.app/sitemap.xml

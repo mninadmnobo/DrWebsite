@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     'Sports Medicine Mymensingh',
     'Knee Hip Replacement Mymensingh',
   ],
-  metadataBase: new URL('https://drkhandakarhafijurrahman.com'),
+  metadataBase: new URL('https://drkhandakarhafijurrahman.vercel.app'),
   openGraph: {
     type: 'profile',
     title: `${doctor.name} — অর্থোপেডিক ও আর্থোস্কপি সার্জন`,
