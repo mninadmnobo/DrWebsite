@@ -24,26 +24,11 @@ export function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           {/* Left Column: Doctor Profile Information */}
           <div className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left">
-            {/* Top Badges */}
+            {/* Top Badge */}
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2 mb-3.5 sm:mb-4">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold badge-blue shadow-2xs">
+              <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold badge-blue shadow-2xs">
                 <span className="status-pulse" />
-                {t('চেম্বার: ৩:০০ - ৯:০০ টা', 'Visiting: 3:00 PM – 9:00 PM')}
-              </span>
-              <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-semibold badge-teal shadow-2xs">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="w-3.5 h-3.5"
-                >
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10" />
-                </svg>
-                FACS (USA) & FIPM (India)
+                {t('চেম্বার সময়: বিকাল ৩:০০ - রাত ৯:০০ টা', 'Visiting: 3:00 PM – 9:00 PM')}
               </span>
             </div>
 
@@ -181,20 +166,13 @@ export function Hero() {
                 <div className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-slate-950 via-slate-950/80 to-transparent pointer-events-none" />
 
                 {/* Below Photo Card Badge — Flush anchored to bottom with zero gap */}
-                <div className="absolute bottom-0 inset-x-0 p-3.5 sm:p-4 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-t border-slate-200/80 dark:border-slate-700/80 rounded-b-[1.35rem] shadow-xl flex items-center justify-between">
-                  <div className="min-w-0 pr-2">
-                    <p className="text-xs sm:text-sm font-bold text-slate-900 dark:text-white truncate">
-                      {lang === 'bn' ? doctorData.nameBn : doctorData.nameEn}
-                    </p>
-                    <p className="text-[11px] sm:text-xs text-sky-600 dark:text-sky-400 font-semibold truncate">
-                      {lang === 'bn' ? 'ময়মনসিংহ মেডিকেল কলেজ হাসপাতাল' : 'MMCH Faculty & Surgeon'}
-                    </p>
-                  </div>
-                  <div className="shrink-0">
-                    <span className="inline-block text-[11px] font-bold px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800">
-                      FACS (USA)
-                    </span>
-                  </div>
+                <div className="absolute bottom-0 inset-x-0 p-3.5 sm:p-4 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-t border-slate-200/80 dark:border-slate-700/80 rounded-b-[1.35rem] shadow-xl">
+                  <p className="text-xs sm:text-sm font-bold text-slate-900 dark:text-white truncate">
+                    {lang === 'bn' ? doctorData.nameBn : doctorData.nameEn}
+                  </p>
+                  <p className="text-[11px] sm:text-xs text-sky-600 dark:text-sky-400 font-semibold truncate">
+                    {lang === 'bn' ? 'ময়মনসিংহ মেডিকেল কলেজ হাসপাতাল' : 'MMCH Faculty & Surgeon'}
+                  </p>
                 </div>
               </div>
             </div>
