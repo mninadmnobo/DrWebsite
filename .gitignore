@@ -1,0 +1,25 @@
+# Dependencies
+node_modules
+
+# Next.js build output
+.next/
+out/
+*.tsbuildinfo
+
+# Environment
+.env*.local
+
+# Editor / OS
+.DS_Store
+.vercel/
+
+# v0 sandbox internal files
+__v0_runtime_loader.js
+__v0_devtools.tsx
+__v0_jsx-dev-runtime.ts
+.snowflake/
+.v0-trash/
+next.user-config.*
+
+# QA screenshot output
+.qa-shots/
