@@ -19,7 +19,7 @@ export function PortfolioProvider({ children }: { children: React.ReactNode }) {
   const [theme, setThemeState] = useState<Theme>('light')
   const [mounted, setMounted] = useState(false)
 
-  // Initialize and synchronize preferences on client mount
+  // Initialize preferences on client mount (Light mode only)
   useEffect(() => {
     const handle = requestAnimationFrame(() => {
       try {
@@ -27,17 +27,9 @@ export function PortfolioProvider({ children }: { children: React.ReactNode }) {
         if (savedLang === 'bn' || savedLang === 'en') {
           setLangState(savedLang)
         }
-
-        const savedTheme = localStorage.getItem('dr_theme') as Theme | null
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
-        const resolvedTheme: Theme = savedTheme ? savedTheme : prefersDark ? 'dark' : 'light'
-
-        setThemeState(resolvedTheme)
-        if (resolvedTheme === 'dark') {
-          document.documentElement.classList.add('dark')
-        } else {
-          document.documentElement.classList.remove('dark')
-        }
+        // Permanently clear dark mode and enforce light mode
+        localStorage.removeItem('dr_theme')
+        document.documentElement.classList.remove('dark')
       } catch {
         // Storage unsupported or restricted
       } finally {
@@ -47,16 +39,6 @@ export function PortfolioProvider({ children }: { children: React.ReactNode }) {
 
     return () => cancelAnimationFrame(handle)
   }, [])
-
-  // Synchronize theme changes to document root
-  useEffect(() => {
-    if (!mounted) return
-    if (theme === 'dark') {
-      document.documentElement.classList.add('dark')
-    } else {
-      document.documentElement.classList.remove('dark')
-    }
-  }, [theme, mounted])
 
   const setLang = (newLang: Language) => {
     setLangState(newLang)

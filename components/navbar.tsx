@@ -5,7 +5,6 @@ import Image from 'next/image'
 import { doctorData } from '@/lib/doctor'
 import { usePortfolio } from '@/lib/context'
 import { LanguageToggle } from './language-toggle'
-import { ThemeToggle } from './theme-toggle'
 
 export function Navbar() {
   const { lang, t } = usePortfolio()
@@ -89,11 +88,10 @@ export function Navbar() {
             ))}
           </div>
 
-          {/* Right Controls: Language, Theme ALWAYS visible on mobile & desktop */}
+          {/* Right Controls: Language ALWAYS visible on mobile & desktop */}
           <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
             {/* Always visible on all screen sizes */}
             <LanguageToggle />
-            <ThemeToggle />
 
             {/* Quick Serial Call Button (desktop / tablet) */}
             <a
